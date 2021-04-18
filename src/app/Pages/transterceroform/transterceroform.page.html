@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-icon slot="start" name="arrow-back" (click)="volver()"></ion-icon>
+    <ion-title>Mi Primer Banco</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="titulo-detalle">
+    Origen
+  </div>
+  <div class="detalle">
+    <ion-item>
+      <ion-input disabled [(ngModel)]="alias"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input disabled [(ngModel)]="numero"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input disabled [(ngModel)]="monto"></ion-input>
+    </ion-item>
+  </div>
+  
+  <div class="titulo-detalle">
+    Destino
+  </div>
+  <ion-item>
+    <ion-label>Cuenta Destino</ion-label>
+    <ion-select [(ngModel)]="destino" interface="action-sheet">
+      <ion-select-option *ngFor="let c of cuentas" [value]=c.numero>{{c.alias}} - {{c.numero}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-input type=number placeholder="Cantidad" [(ngModel)]="cantidad"></ion-input>
+  </ion-item>
+
+  <ion-button color="primary" expand="block" (click)="transferir()" [disabled]="!cantidad || !destino">Transferir</ion-button>
+
+</ion-content>

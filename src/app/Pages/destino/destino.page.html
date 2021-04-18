@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-icon (click)="volver()" slot="start" name="arrow-back"></ion-icon>
+    <ion-title>Mi Primer Banco</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="titulo-detalle">
+    Destino
+  </div>
+
+  <ion-item (click)="misCuentas()">
+    <ion-label>A mis cuentas</ion-label>
+  </ion-item>
+  <ion-item (click)="aTerceros()">
+    <ion-label>A terceros</ion-label>
+  </ion-item>
+  <ion-item (click)="scanner()">
+    <ion-label>Escaner QR</ion-label>
+  </ion-item>
+
+</ion-content>

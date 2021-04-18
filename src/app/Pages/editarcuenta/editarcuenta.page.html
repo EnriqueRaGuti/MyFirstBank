@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-icon slot="start" name="arrow-back" (click)="volver()"></ion-icon>
+    <ion-title>Mi Primer Banco</ion-title>
+    <ion-icon (click)="volver()" slot="end" name="log-out"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="titulo-detalle">
+    Editar Detalle
+  </div>
+  <div class="detalle">
+    <ion-item>
+      <ion-label position="floating">Alias</ion-label>
+      <ion-input [(ngModel)]="alias"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">titular</ion-label>
+      <ion-input disabled [(ngModel)]="titular"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">numero</ion-label>
+      <ion-input disabled [(ngModel)]="numero"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">tipo</ion-label>
+      <ion-input disabled [(ngModel)]="tipo"></ion-input>
+    </ion-item>
+  </div>
+  <ion-button color="primary" expand="block" (click)="editar()">Editar</ion-button>
+
+</ion-content>

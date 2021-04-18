@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-icon slot="start" name="arrow-back" (click)="volver()"></ion-icon>
+    <ion-title>Mi Primer Banco</ion-title>
+    <ion-icon (click)="volver()" slot="end" name="log-out"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="titulo-detalle">
+    <div class="icon-qr"><ion-icon class="icon-q" slot="start" name="qr-code" (click)="mostrarQR()"></ion-icon></div>
+    Detalle
+    <div class="icon-edit"><ion-icon class="icon" slot="end" name="create" (click)="editarCuenta()"></ion-icon></div>
+  </div>
+  <div class="detalle">
+        <div >{{ alias }}</div>
+        <div >{{ tipo }}</div>
+        <div >{{ titular }}</div>
+        <div >{{ estado }}</div>
+        <div >{{ numero }}</div>
+        <div >${{ monto }}</div>
+  </div>
+  <div class="movimientos">
+    <div><b>Movimientos</b></div>
+  </div>
+    <div class="cuenta" *ngFor="let m of mov">
+      <div>
+        <div class="colum-1">{{ m.fecha }}</div>
+        <div class="colum-2">{{m.signo}}{{ m.monto }}</div><br>
+      </div>
+      <div>
+        <div class="colum-1">{{ m.documento }}</div>
+        <div class="colum-2">{{ m.hora }}</div><br>
+      </div>
+    </div>
+
+  
+</ion-content>

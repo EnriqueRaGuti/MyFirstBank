@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-icon (click)="openFirst()" slot="start" name="arrow-back"></ion-icon>
+    <ion-title>Mi Primer Banco</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="titulo-detalle">
+    Seleccione la cuenta
+  </div>
+ <ion-card>
+   <ion-card-header>
+     <ion-card-title>Mis cuentas</ion-card-title>
+   </ion-card-header>
+   <ion-card-content>
+     <div class="cuenta" *ngFor="let c of cuentas" (click)="transferir(c.numero)">
+      <div>
+        <div class="colum-1"><b>{{ c.alias }}</b></div>
+        <div class="colum-2">{{ c.tipo }}</div><br>
+      </div>
+      <div>
+        <div class="colum-1">{{ c.numero }}</div>
+        <div class="colum-2">${{ c.monto }}</div><br>
+      </div>
+     </div>
+   </ion-card-content>
+ </ion-card>
+
+</ion-content>
